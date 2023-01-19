@@ -6,7 +6,6 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var index = require('./views/index.html');
 
 var app = express();
 
@@ -20,7 +19,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
+app.use('/', function(req,res){
+  res.sendFile(__dirname + '/views/tet.html')
+});
 app.use('/users', function(req,res){
   res.send("tes2t")
 });
