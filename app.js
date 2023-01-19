@@ -20,10 +20,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', function(req,res){
-  req.send("test")
+  res.send("test")
 });
 app.use('/users', function(req,res){
-  req.send("tes2t")
+  res.send("tes2t")
 });
 
 // catch 404 and forward to error handler
