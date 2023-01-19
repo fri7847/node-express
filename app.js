@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var index = require('./view/index');
 
 var app = express();
 
@@ -19,9 +20,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', function(req,res){
-  res.send("test")
-});
+app.use('/', index);
 app.use('/users', function(req,res){
   res.send("tes2t")
 });
