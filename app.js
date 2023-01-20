@@ -20,10 +20,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', function(req,res){
-  res.sendFile(__dirname + '/views/tet.html')
-});
-app.use('/users', function(req,res){
-  res.send("tes2t")
+  res.sendFile(__dirname + '/dist/index.html')
 });
 
 // catch 404 and forward to error handler
